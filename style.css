@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+}
+
+/* Start Screen */
+
+#startScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clickMe {
+  padding: 16px 35px;
+  border: none;
+  border-radius: 50px;
+  background: #ff4f81;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 79, 129, 0.35);
+  transition: 0.3s;
+}
+
+#clickMe:hover {
+  transform: scale(1.08);
+}
+
+#clickMe:active {
+  transform: scale(0.95);
+}
+
+/* Main Content */
+
+#content {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Image */
+
+.main-image {
+  width: min(85vw, 400px);
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: imageShow 1.5s ease forwards;
+}
+
+@keyframes imageShow {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Main I Love U */
+
+h1 {
+  margin-top: 20px;
+  color: #ff3f78;
+  font-size: 42px;
+  animation: textShow 1.5s ease forwards;
+}
+
+@keyframes textShow {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Monthsary */
+
+.monthsary {
+  margin-top: 12px;
+  color: #ff4f81;
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  animation: monthsaryShow 2s ease forwards;
+}
+
+@keyframes monthsaryShow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating I Love U */
+
+.love-text {
+  position: fixed;
+  bottom: -60px;
+  color: #ff4f81;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  animation: loveUp linear forwards;
+  text-shadow: 0 2px 5px rgba(255, 79, 129, 0.2);
+}
+
+@keyframes loveUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* Floating Bubbles */
+
+.bubble {
+  position: fixed;
+  bottom: -50px;
+  border-radius: 50%;
+  background: rgba(255, 105, 150, 0.25);
+  pointer-events: none;
+  z-index: 8;
+  animation: bubbleUp linear forwards;
+}
+
+@keyframes bubbleUp {
+  from {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Floating Hearts */
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  color: #ff4f81;
+  pointer-events: none;
+  z-index: 9;
+  animation: heartUp linear forwards;
+}
+
+@keyframes heartUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .monthsary {
+    font-size: 22px;
+  }
+
+  .main-image {
+    width: 85vw;
+    max-height: 55vh;
+  }
+
+  #clickMe {
+    font-size: 20px;
+    padding: 14px 30px;
+  }
+
+  .love-text {
+    font-size: 16px;
+  }
+}
